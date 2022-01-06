@@ -1,0 +1,17 @@
+{
+    "name": "weliton/php-mvc",
+    "autoload": {
+        "psr-4": {
+            "Weliton\\PhpMvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "weliton",
+            "email": "welingtonzsilva@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "2.10.4"
+    }
+}
