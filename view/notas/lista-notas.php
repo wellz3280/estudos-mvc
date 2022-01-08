@@ -7,7 +7,7 @@
     <ul class="list-group">
        <?php foreach($nota as $notas):?>
             <li class="list-group-item">
-                <?php echo $notas; ?>
+              <a href="#" class="nav-link "><?php echo $notas; ?></a>
             </li>
        <?php endforeach; ?>
     </ul>

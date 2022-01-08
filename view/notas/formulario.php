@@ -1,6 +1,6 @@
 <?php include __DIR__.'/../start-html.php'; ?>
-    
-<form>
+<a href="/listaNotas" class="link">Voltar</a>
+<form action="/salvar-nota" method="post">
         <div class="form-group">
         <label for="titulo">Titulo</label>
             <input type="text" id="titulo" name="titulo" class="form-control">    

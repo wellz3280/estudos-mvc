@@ -1,7 +1,7 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
-interface interfaceControladorRequisicao
+interface InterfaceControladorRequisicao
 {
     public function processaRequisicao():void;
 }

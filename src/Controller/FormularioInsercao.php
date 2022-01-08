@@ -1,7 +1,7 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
-class FormularioInsercao implements interfaceControladorRequisicao
+class FormularioInsercao implements InterfaceControladorRequisicao
 {
     public function processaRequisicao():void
     {

@@ -1,7 +1,7 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
-class ListaNotas implements interfaceControladorRequisicao
+class ListaNotas implements InterfaceControladorRequisicao
 {
     private array $repositorioNotas;
 
@@ -9,9 +9,9 @@ class ListaNotas implements interfaceControladorRequisicao
     {   
         $this->repositorioNotas = [
             'Token git',
-            'jdgghsdgfyeyuwetrywerqwhfjhsaj',
-            'Nu Conta',
-            'valor total cartão de crédito'
+            'Conta Santander',
+            'Nu Conta'
+          
         ];
         
         

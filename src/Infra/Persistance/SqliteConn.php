@@ -7,7 +7,7 @@ use PDOException;
 
 class SqliteConn implements InterfaceConection
 {
-    public function startService(): PDO
+    public function startService(): \PDO
     {
         try{
             
