@@ -1,6 +1,6 @@
 <?php include __DIR__.'/../start-html.php';?>
 <?php foreach($nota as $notas):?>
-    <h3> <?php echo $notas['titulo'] ?></h3>
+    <h3 style="color:blue"> <?php echo $notas['titulo'] ?></h3>
     <p><?php echo $notas['nota'] ?></p>
 
 <?php endforeach;?>

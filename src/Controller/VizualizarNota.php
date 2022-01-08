@@ -17,9 +17,8 @@ class VizualizarNota implements InterfaceControladorRequisicao
 
     public function processaRequisicao(): void
     {
-        $titulo = "Notas";
         $id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_STRING);
-
+        
         $query = new QueryBuilder($this->pdo);
         
         $result = $query
@@ -28,9 +27,10 @@ class VizualizarNota implements InterfaceControladorRequisicao
         ->from("note")
         ->where('where','idNote',$id)
         ->get('select');
-
+        
         $nota = $result;
-        $titulo = "Lista Notas";
+        $titulo = "Notas";
+        
         require __DIR__.'/../../view/notas/viewNota.php';
 
     }
