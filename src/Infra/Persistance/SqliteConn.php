@@ -12,7 +12,7 @@ class SqliteConn implements InterfaceConection
         try{
             
             $connSqLite = new PDO ('sqlite:'.__DIR__.'/../../../notas.sqlite');
-            
+
             return $connSqLite;
         }catch(PDOException $e){
             echo "Error". $e->getMessage();

@@ -5,8 +5,8 @@
         <label for="titulo">Titulo</label>
             <input type="text" id="titulo" name="titulo" class="form-control">    
         
-        <label for="descricao">Descrição</label>
-            <input type="text" id="descricao" name="descricao" class="form-control">
+        <label for="nota">Descrição</label>
+            <input type="text" id="nota" name="nota" class="form-control">
         </div>
         <button class="btn btn-primary">Salvar</button>
     </form>
