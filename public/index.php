@@ -6,23 +6,16 @@ use Weliton\PhpMvc\Controller\FormularioInsercao;
 use Weliton\PhpMvc\Controller\ListaNotas;
 use Weliton\PhpMvc\Controller\Persistencia;
 
-switch ($_SERVER['PATH_INFO']) {
-        case '/novaNota':
-            $controlador = new FormularioInsercao();
-            $controlador->processaRequisicao();
-        break;
-        
-        case '/listaNotas':
-            $controlador = new ListaNotas();
-            $controlador->processaRequisicao();
-        break;
-        
-        case '/salvar-nota':
-            $controlador =  new Persistencia();
-            $controlador->processaRequisicao();
-        break;
-        
-        default:
-            echo "Error 404";
-        break;
-    }
+$path = $_SERVER['PATH_INFO'];
+$routes = require __DIR__.'/../config/rotas.php';
+
+if(!array_key_exists($path,$routes)){
+    
+    http_response_code(404);
+    exit();
+
+}else{
+    $classeControladora = $routes[$path]; 
+    $controlador = new $classeControladora();
+    $controlador->processaRequisicao();
+}

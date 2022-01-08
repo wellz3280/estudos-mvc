@@ -91,8 +91,8 @@ class QueryBuilder
         // select from table where columns = value
         if($condition == 'where'){$this->where = " WHERE {$columns} = {$value} ";}
         
-        // select from table ORDER BY columns DESC
-        if($condition == 'desc'){$this->where = "ORDER BY {$columns} DESC";}
+        // select from table ORDER BY columns DESC limit value
+        if($condition == 'desc'){$this->where = "ORDER BY {$columns} DESC limit {$value}";}
 
         return $this;
     }

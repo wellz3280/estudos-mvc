@@ -23,7 +23,7 @@ class ListaNotas implements InterfaceControladorRequisicao
         //->columns(['*'])
         ->columns(['titulo'])
         ->from("note")
-        ->where('desc','idNote')
+        ->where('desc','idNote','10')
         ->get('select');
 
         $nota = $result;
