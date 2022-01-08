@@ -1,25 +1,32 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
+use Weliton\PhpMvc\Infra\Persistance\QueryBuilder;
+use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
+
 class ListaNotas implements InterfaceControladorRequisicao
 {
-    private array $repositorioNotas;
+    private \PDO $pdo;
 
     public function __construct()
     {   
-        $this->repositorioNotas = [
-            'Token git',
-            'Conta Santander',
-            'Nu Conta'
-          
-        ];
-        
+        $conn = new SqliteConn();
+        $this->pdo = $conn->startService();
         
     }
     
     public function processaRequisicao():void
     {
-        $nota = $this->repositorioNotas;
+        $query = new QueryBuilder($this->pdo);
+        
+        $result = $query
+        //->columns(['*'])
+        ->columns(['titulo'])
+        ->from("note")
+        ->where('desc','idNote')
+        ->get('select');
+
+        $nota = $result;
         $titulo = "Lista Notas";
         require __DIR__. '/../../view/notas/lista-notas.php';
     }

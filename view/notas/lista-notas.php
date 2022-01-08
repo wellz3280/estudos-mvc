@@ -7,9 +7,9 @@
     <ul class="list-group">
        <?php foreach($nota as $notas):?>
             <li class="list-group-item">
-              <a href="#" class="nav-link "><?php echo $notas; ?></a>
+              <a href="#" class="nav-link "> <?php echo $notas['titulo']; ?></a>
             </li>
-       <?php endforeach; ?>
+       <?php endforeach; ?> 
     </ul>
 
 <?php include __DIR__.'/../end-html.php'; ?>
