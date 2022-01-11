@@ -8,7 +8,9 @@
        <?php foreach($nota as $notas):?>
             <li class="list-group-item">
               <a href="/vizualizar-nota?id=<?php echo $notas['idNote']; ?>" class="nav-link "> 
-                <?php echo $notas['titulo']; ?></a>
+                 <?php echo $notas['titulo']; ?>
+            </a>
+            
             </li>
        <?php endforeach; ?> 
     </ul>
