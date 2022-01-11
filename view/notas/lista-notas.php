@@ -6,11 +6,11 @@
 
     <ul class="list-group">
        <?php foreach($nota as $notas):?>
-            <li class="list-group-item">
+            <li class="list-group-item d-flex justify-content-between">
               <a href="/vizualizar-nota?id=<?php echo $notas['idNote']; ?>" class="nav-link "> 
                  <?php echo $notas['titulo']; ?>
             </a>
-            
+            <a href="/excluir-nota?id=<?php echo $notas['idNote'];?>" class="btn btn-danger btn-sm">excluir</a>
             </li>
        <?php endforeach; ?> 
     </ul>
