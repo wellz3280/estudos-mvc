@@ -58,7 +58,7 @@ final class Versions
   'symfony/polyfill-php80' => 'v1.24.0@57b712b08eddb97c762a8caa32c84e037892d2e9',
   'symfony/service-contracts' => 'v3.0.0@36715ebf9fb9db73db0cb24263c79077c6fe8603',
   'symfony/string' => 'v6.0.2@bae261d0c3ac38a1f802b4dfed42094296100631',
-  'weliton/php-mvc' => '1.0.0+no-version-set@',
+  'weliton/php-mvc' => 'dev-master@55e0cc7903cc105451ecb24b02faf0ec69364e35',
 );
 
     private function __construct()

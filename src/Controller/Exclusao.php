@@ -33,6 +33,7 @@ class Exclusao implements InterfaceControladorRequisicao
             ->get('delete');
 
             header('Location:/listaNotas');
+            
         }catch(PDOException $e){
             echo "ERROR". $e->getMessage();
         }
