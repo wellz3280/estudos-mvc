@@ -3,6 +3,7 @@
 use Weliton\PhpMvc\Controller\AtualizarNota;
 use Weliton\PhpMvc\Controller\Exclusao;
 use Weliton\PhpMvc\Controller\FormularioInsercao;
+use Weliton\PhpMvc\Controller\FormularioLogin;
 use Weliton\PhpMvc\Controller\ListaNotas;
 use Weliton\PhpMvc\Controller\Persistencia;
 use Weliton\PhpMvc\Controller\VizualizarNota;
@@ -13,6 +14,7 @@ return [
     '/salvar-nota' => Persistencia::class,
     '/vizualizar-nota' => VizualizarNota::class,
     '/excluir-nota' => Exclusao::class,
-    '/atualizar-nota' => AtualizarNota::class
+    '/atualizar-nota' => AtualizarNota::class,
+    '/login' => FormularioLogin::class
 ];
 
