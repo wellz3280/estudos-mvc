@@ -3,9 +3,19 @@
 
 class NewNotas
 {
+    private int $id;
     private string $titulo;
     private string $nota;
 
+    public function getId():int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id):void
+    {
+        $this->id = $id;
+    }
 
     public function getTitulo():string
     {

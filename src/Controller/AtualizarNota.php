@@ -36,6 +36,7 @@ class AtualizarNota implements InterfaceControladorRequisicao
        
         foreach($nota as $notas){
             $data = new NewNotas();
+            $data->setId($notas['idNote']);
             $data->setTitulo($notas['titulo']);
             $data->setNota($notas['nota']);
         }
@@ -43,7 +44,7 @@ class AtualizarNota implements InterfaceControladorRequisicao
          $titulo = "Atualizar {$data->getTitulo()}";
 
          
-        require __DIR__.'/../../view/notas/update.php';
+        require __DIR__.'/../../view/notas/formulario.php';
     }
 
     public function update():self

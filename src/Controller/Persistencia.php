@@ -26,7 +26,8 @@ class Persistencia implements InterfaceControladorRequisicao
             
             $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_STRING);
             $nota = filter_input(INPUT_POST, 'nota', FILTER_SANITIZE_STRING);
-
+            $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+            
             
             $novaNota = new NewNotas();
             $novaNota->setTitulo($titulo);
@@ -34,10 +35,23 @@ class Persistencia implements InterfaceControladorRequisicao
             
             $query = new QueryBuilder($this->pdo);
 
-            $query->parameters(['titulo' => $novaNota->getTitulo(),
-            'nota' => $novaNota->getNota()])
-            ->from('note')
-            ->get('insert');
+            if(!is_null($id) && $id !== false){
+                $novaNota->setId($id);
+                
+                $query->parameters(['titulo' => $novaNota->getTitulo()
+                ,'nota' => $novaNota->getNota(), 'idNote'=> $novaNota->getId()])
+                ->from('note')
+                ->where('where','idNote','?')
+                ->get('update');
+
+
+            }else{
+
+                $query->parameters(['titulo' => $novaNota->getTitulo(),
+                'nota' => $novaNota->getNota()])
+                ->from('note')
+                ->get('insert');
+            }
 
             header('Location: /listaNotas',302);
 

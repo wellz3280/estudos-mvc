@@ -4,7 +4,7 @@
 
 Para intaciar a classe é necessario uma conexão com banco.
 
-bancos testados (mysql)
+bancos testados (mysql,Sqlite)
 
 metodos
   parameters recebe um array 
