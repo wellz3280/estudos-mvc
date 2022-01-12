@@ -1,5 +1,6 @@
 <?php
 
+use Weliton\PhpMvc\Controller\AtualizarNota;
 use Weliton\PhpMvc\Controller\Exclusao;
 use Weliton\PhpMvc\Controller\FormularioInsercao;
 use Weliton\PhpMvc\Controller\ListaNotas;
@@ -11,6 +12,7 @@ return [
     '/listaNotas' => ListaNotas::class,
     '/salvar-nota' => Persistencia::class,
     '/vizualizar-nota' => VizualizarNota::class,
-    '/excluir-nota' => Exclusao::class
+    '/excluir-nota' => Exclusao::class,
+    '/atualizar-nota' => AtualizarNota::class
 ];
 

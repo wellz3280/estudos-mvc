@@ -10,8 +10,13 @@
               <a href="/vizualizar-nota?id=<?php echo $notas['idNote']; ?>" class="nav-link "> 
                  <?php echo $notas['titulo']; ?>
             </a>
-            <a href="/excluir-nota?id=<?php echo $notas['idNote'];?>" class="btn btn-danger btn-sm">excluir</a>
-            </li>
+            <span>
+
+                <a href="/atualizar-nota?id=<?php echo $notas['idNote'];?>" class="btn btn-info btn-sm">atualizar</a>
+                <a href="/excluir-nota?id=<?php echo $notas['idNote'];?>" class="btn btn-danger btn-sm">excluir</a>
+            </span>
+            
+        </li>
        <?php endforeach; ?> 
     </ul>
 
