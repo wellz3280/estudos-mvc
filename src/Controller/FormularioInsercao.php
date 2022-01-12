@@ -1,11 +1,14 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
-class FormularioInsercao implements InterfaceControladorRequisicao
+class FormularioInsercao extends ControllerComHtml implements InterfaceControladorRequisicao
 {
     public function processaRequisicao():void
     {
-        $titulo = "Adicionar Nova nota";
-      require __DIR__.'/../../view/notas/formulario.php';
+        
+      echo $this->renderizaHtml('notas/formulario.php',[
+            'tituloPagina' => "Adicionar Nova Nota"
+        ]);
+    
     }
 }

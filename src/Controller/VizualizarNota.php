@@ -5,7 +5,7 @@
 use Weliton\PhpMvc\Infra\Persistance\QueryBuilder;
 use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
 
-class VizualizarNota implements InterfaceControladorRequisicao
+class VizualizarNota extends ControllerComHtml implements InterfaceControladorRequisicao
 {
     private \PDO $pdo;
 
@@ -29,9 +29,12 @@ class VizualizarNota implements InterfaceControladorRequisicao
         ->get('select');
         
         $nota = $result;
-        $titulo = "Notas";
         
-        require __DIR__.'/../../view/notas/viewNota.php';
+        echo $this->renderizaHtml('notas/viewNota.php',[
+            'nota' => $nota,
+            'tituloPagina' => 'Vizualizar Notas'
+        ]);
+    
 
     }
 }

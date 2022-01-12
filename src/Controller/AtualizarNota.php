@@ -6,7 +6,7 @@ use Weliton\PhpMvc\Entity\NewNotas;
 use Weliton\PhpMvc\Infra\Persistance\QueryBuilder;
 use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
 
-class AtualizarNota implements InterfaceControladorRequisicao
+class AtualizarNota extends ControllerComHtml implements InterfaceControladorRequisicao
 {   
     private \PDO $pdo;
 
@@ -33,18 +33,14 @@ class AtualizarNota implements InterfaceControladorRequisicao
         ->from("note")
         ->where('where','idNote',$id)
         ->get('select');
-       
-        foreach($nota as $notas){
-            $data = new NewNotas();
-            $data->setId($notas['idNote']);
-            $data->setTitulo($notas['titulo']);
-            $data->setNota($notas['nota']);
-        }
+        
 
-         $titulo = "Atualizar {$data->getTitulo()}";
-
-         
-        require __DIR__.'/../../view/notas/formulario.php';
+        // $titulo = "Atualizar {$data->getTitulo()}";
+      echo $this->renderizaHtml('notas/update.php',[
+            'nota' => $nota,
+            'data' => new NewNotas(),
+            'tituloPagina' => 'Atualizar Nota'
+        ]);
     }
 
     public function update():self

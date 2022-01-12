@@ -12,5 +12,5 @@
     
     <div class="container">
     <div class="jumbotron">
-        <h1><?php echo $titulo; ?></h1>
+        <h1><?php echo $tituloPagina; ?></h1>
     </div>

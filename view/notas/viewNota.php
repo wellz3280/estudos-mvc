@@ -1,5 +1,5 @@
 <?php include __DIR__.'/../start-html.php';?>
-<a href="/listaNotas" class="btn btn-primary mb-2">
+<a href="/listaNotas" class="">
     voltar
 </a>
 

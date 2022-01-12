@@ -37,7 +37,7 @@ class Persistencia implements InterfaceControladorRequisicao
 
             if(!is_null($id) && $id !== false){
                 $novaNota->setId($id);
-                
+                // atualizando
                 $query->parameters(['titulo' => $novaNota->getTitulo()
                 ,'nota' => $novaNota->getNota(), 'idNote'=> $novaNota->getId()])
                 ->from('note')
@@ -46,7 +46,7 @@ class Persistencia implements InterfaceControladorRequisicao
 
 
             }else{
-
+                // inserindo
                 $query->parameters(['titulo' => $novaNota->getTitulo(),
                 'nota' => $novaNota->getNota()])
                 ->from('note')
