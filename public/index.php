@@ -17,7 +17,7 @@ if(!array_key_exists($path,$routes)){
         header('Location:/login');
         exit();
     }
-
+    
     $classeControladora = $routes[$path]; 
     $controlador = new $classeControladora();
     $controlador->processaRequisicao();

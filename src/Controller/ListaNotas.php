@@ -1,6 +1,7 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
+use Weliton\PhpMvc\Entity\Usuario;
 use Weliton\PhpMvc\Helper\RenderizaHtml;
 use Weliton\PhpMvc\Infra\Persistance\QueryBuilder;
 use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
@@ -28,6 +29,7 @@ class ListaNotas implements InterfaceControladorRequisicao
         ->from("note")
         ->where('desc','idNote','10')
         ->get('select');
+
 
         $nota = $result;
         echo $this->renderizaHtml('notas/lista-notas.php',[

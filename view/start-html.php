@@ -22,7 +22,8 @@
 <div class="container">
 
     <div class="jumbotron">
-        <h1><?php echo $tituloPagina; ?></h1>
+    <p>Bem vindo:  </p>
+        <h2><?php echo $tituloPagina; ?></h2>
     
     </div>
     <?php if(isset($_SESSION['mensagem'])): ?>

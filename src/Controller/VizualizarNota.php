@@ -9,6 +9,7 @@ use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
 class VizualizarNota  implements InterfaceControladorRequisicao
 {
     use RenderizaHtml;
+    
     private \PDO $pdo;
 
     public function __construct()
