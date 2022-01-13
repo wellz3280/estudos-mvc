@@ -32,8 +32,10 @@ class Usuario
         return $this->senha;
     }
 
-    public function setSenha(string $senha):void
+
+    public function verificaSenha(string $senha):string
     {
-        $this->senha = $senha;
+        
+       return  md5($senha);
     }
 }

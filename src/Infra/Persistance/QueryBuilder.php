@@ -168,7 +168,7 @@ class QueryBuilder
        return $this;
     }
 
-  
+
     public function get(string $service): array|bool
     {
         if($service == 'select'){
