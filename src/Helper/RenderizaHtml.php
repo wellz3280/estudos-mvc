@@ -1,8 +1,8 @@
 <?php
     
-    namespace Weliton\PhpMvc\Controller;
+    namespace Weliton\PhpMvc\Helper;
 
-abstract class ControllerComHtml
+trait RenderizaHtml
 {
     public function renderizaHtml(string $caminhoTemplate, array $dados):string
     {

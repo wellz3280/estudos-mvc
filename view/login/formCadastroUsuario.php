@@ -1,6 +1,6 @@
 <?php include __DIR__.'/../start-html.php'; ?>
 
-<form action="/salvar-usuario" method="post">
+<form action="/salvar-usuario-login" method="post">
     <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" name="email" id="email" class="form-control" required>

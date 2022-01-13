@@ -3,11 +3,15 @@
     namespace Weliton\PhpMvc\Controller;
 
 use Weliton\PhpMvc\Entity\NewNotas;
+use Weliton\PhpMvc\Helper\RenderizaHtml;
 use Weliton\PhpMvc\Infra\Persistance\QueryBuilder;
 use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
 
-class AtualizarNota extends ControllerComHtml implements InterfaceControladorRequisicao
+class AtualizarNota  implements InterfaceControladorRequisicao
 {   
+
+    use RenderizaHtml;
+    
     private \PDO $pdo;
 
     public function __construct()

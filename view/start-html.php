@@ -24,3 +24,12 @@
     <div class="jumbotron">
         <h1><?php echo $tituloPagina; ?></h1>
     
+    </div>
+    <?php if(isset($_SESSION['mensagem'])): ?>
+      <div class="alert alert-<?= $_SESSION['tipo_mensagem'];?>">
+       <?= $_SESSION['mensagem']; ?>
+     </div>
+    <?php endif; 
+        unset($_SESSION['tipo_mensagem']);
+        unset($_SESSION['mensagem']);
+    ?>

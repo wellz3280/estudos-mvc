@@ -1,8 +1,12 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
-class FormularioInsercao extends ControllerComHtml implements InterfaceControladorRequisicao
+use Weliton\PhpMvc\Helper\RenderizaHtml;
+
+class FormularioInsercao implements InterfaceControladorRequisicao
 {
+    use RenderizaHtml;
+    
     public function processaRequisicao():void
     {
         

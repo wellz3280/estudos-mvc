@@ -1,11 +1,14 @@
 <?php
     namespace Weliton\PhpMvc\Controller;
 
+use Weliton\PhpMvc\Helper\RenderizaHtml;
 use Weliton\PhpMvc\Infra\Persistance\QueryBuilder;
 use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
 
-class ListaNotas extends ControllerComHtml implements InterfaceControladorRequisicao
+class ListaNotas implements InterfaceControladorRequisicao
 {
+    use RenderizaHtml;
+    
     private \PDO $pdo;
 
     public function __construct()

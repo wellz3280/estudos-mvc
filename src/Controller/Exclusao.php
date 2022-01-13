@@ -3,11 +3,14 @@
 
 use PDO;
 use PDOException;
+use Weliton\PhpMvc\Helper\FlashMessageTrait;
 use Weliton\PhpMvc\Infra\Persistance\QueryBuilder;
 use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
 
 class Exclusao implements InterfaceControladorRequisicao
 {
+    use FlashMessageTrait;
+
     private PDO $pdo;
 
     public function __construct()
@@ -31,6 +34,8 @@ class Exclusao implements InterfaceControladorRequisicao
             $query->from('note')
             ->where('where','idNote',$id)
             ->get('delete');
+
+            $this->defineMensagem('warning','Nota Exclida Com sucesso');
 
             header('Location:/listaNotas');
             

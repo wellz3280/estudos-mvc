@@ -22,7 +22,7 @@ return [
     '/login' => FormularioLogin::class,
     '/realiza-login' => RealizarLogin::class,
     '/cadastrar-usuario-login' => CadUsuarioForm::class,
-    '/salvar-usuario' => PersistenciaUsuario::class,
+    '/salvar-usuario-login' => PersistenciaUsuario::class,
     '/logout' => Logout::class
 ];
 

@@ -2,11 +2,14 @@
     namespace Weliton\PhpMvc\Controller;
 
 use Weliton\PhpMvc\Entity\Usuario;
+use Weliton\PhpMvc\Helper\FlashMessageTrait;
 use Weliton\PhpMvc\Infra\Persistance\SqliteConn;
 use Weliton\PhpMvc\Infra\Persistance\VerificaLogin;
 
 class RealizarLogin implements InterfaceControladorRequisicao
 {
+    use FlashMessageTrait;
+
     private \PDO $pdo;
 
     public function __construct()
@@ -20,7 +23,11 @@ class RealizarLogin implements InterfaceControladorRequisicao
         $email = filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
 
         if(is_null($email) || $email === false){
-            echo "Este Email não é Valido";
+            // methodo FlashMensageTrait
+            $this->defineMensagem('danger','Este Email não é Valido');
+            
+            header('Location:/login');
+            
             return;
          }
         
@@ -45,7 +52,8 @@ class RealizarLogin implements InterfaceControladorRequisicao
 
             header('Location:/listaNotas');
         }else{
-
+            // methodo FlashMensageTrait
+            $this->defineMensagem('danger','Usuario ou Senha Invalidos');
             header('Location:/login');
         }
 
